@@ -14,8 +14,8 @@ gulp.task('serve', () => {
     browserSync.init({
         server: './'
     })
-    gulp.watch('./js/*.js', ['js'])
-    gulp.watch('./scss/*.scss', ['sass'])
+    gulp.watch('./js/*.js', gulp.series(['js']))
+    gulp.watch('./scss/*.scss', gulp.series(['sass']))
     gulp.watch('./*.html').on('change', browserSync.reload)
 })
 
@@ -45,4 +45,4 @@ gulp.task('js', () => {
         .pipe(browserSync.stream())
 })
 
-gulp.task('default', ['sass', 'js', 'serve'])
+gulp.task('default', gulp.parallel(['sass', 'js', 'serve']))
