@@ -1,0 +1,55 @@
+h1 {
+    margin-bottom: 0.1em;
+    font-size: 32px;
+    font-weight: 700;
+}
+h2 {
+    margin-bottom: 1em;
+    font-size: 20px;
+}
+h3 {
+    font-size: 18px;
+    font-weight: 700;
+}
+p {
+    font-size: 14px;
+    line-height: 1.5em;
+}
+:root {
+    --big-font: 16px;
+}
+
+@media (min-width: 480px) {
+    h1 {
+        font-size: calc(2rem + ((1vw - 4.8px) * 5.6944));
+    }
+    h2 {
+        font-size: calc(1.25rem + ((1vw - 4.8px) * 1.9444));
+    }
+    h3 {
+        font-size: calc(1.125rem + ((1vw - 4.8px) * 1.25));
+    }
+    p {
+        font-size: calc(0.875rem + ((1vw - 4.8px) * 0.4167));
+    }
+    :root {
+        --big-font: calc(1rem + ((1vw - 4.8px) * 0.5556));
+    }
+}
+@media (min-width: 1920px) {
+    h1 {
+        font-size: 114px;
+    }
+    h2 {
+        font-size: 48px;
+    }
+    h3 {
+        font-size: 36px;
+    }
+    p {
+        font-size: 20px;
+    }
+    :root {
+        --big-font: 24px;
+    }
+}
