@@ -69,7 +69,6 @@ body {
     outline: none;
     cursor: pointer;
     &:hover, &:focus {
-        color: $blue;
         &::before {
             left: 0;
         }
@@ -88,6 +87,9 @@ body {
         clip-path: polygon(0 0, 600px 0, 453.8px 100px, 0 100px);
         transition: .5s ease-in;
         z-index: -1;
+    }
+    span {
+        mix-blend-mode: difference;
     }
 }
 .main-nav {

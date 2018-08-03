@@ -221,3 +221,8 @@
         margin: 0 auto!important;
     }
 }
+@media (max-width: 500px) {
+    .list {
+        width: auto;
+    }
+}
