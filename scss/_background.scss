@@ -1,82 +1,14 @@
-.bg-wrapper {
+.bg-wrapper.footer {
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: 120vw;
+    height: 80vw;
+    margin-top: -25vw;
     margin-bottom: -25vw;
 }
-.inline-bg-wrapper {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 100vw;
-    margin: -20vw 0 -21vw;
-    .red-stripe {
-        top: 0;
-    }
-}
-.bg-wrapper.footer {
-    margin-top: -25vw;
-    margin-bottom: 0;
-    height: 80vw;
-}
-.header-bg, .header-bg-2, .header-bg-3, .red-stripe, .footer-bg {
+.footer-bg {
     position: absolute;
     box-shadow: 0 0 20px rgba(0, 0, 0, .5);
-}
-.header-bg {
-    top: 0;
-    right: 0;
-    height: $small-band-size;
-    width: 400vw;
-    background: $green;
-    transform: rotate($slope-angle);
-    transform-origin: bottom right;
-}
-.header-bg-2 {
-    top: $small-band-size;
-    right: 0;
-    height: $large-band-size;
-    width: 400vw;
-    background: $blue;
-    transform: rotate($slope-angle) translateX(-22vw);
-    transform-origin: top right;
-}
-.red-stripe {
-    top: $small-band-size - $xs-band-size;
-    right: 0;
-    width: 400vw;
-    height: $xs-band-size;
-    background: $red;
-    transform: rotate(-$slope-angle);
-    transform-origin: right top;
-    overflow: hidden;
-    &.flip {
-        right: auto;
-        left: 0;
-        transform: rotate($slope-angle);
-        transform-origin: left top;
-        .star {
-            right: auto;
-            left: 150vw;
-            &.shooting {
-                animation-name: shootingStarLeft;
-            }
-        }
-    }
-    .star {
-        position: absolute;
-        display: block;
-        top: 20px;
-        right: 150vw;
-        width: 7px;
-        height: 7px;
-        border-radius: 10px;
-        background: #FFF;
-        &.shooting {
-            animation: shootingStarRight 2s cubic-bezier(0.95, 0, 1, 1);
-        }
-    }
 }
 .footer-bg {
     top: 100%;
@@ -98,15 +30,4 @@
 }
 
 @media (max-width: 1100px) {
-    .bg-wrapper {
-        height: 142vw;
-    }
-    .header-bg-2 {
-        height: $large-band-size + $xs-band-size;
-        transform: rotate($slope-angle);
-        clip-path: polygon(0 0, 100% 0, 100% 75%, 96% 100%, 0 100%);
-    }
-    .red-stripe {
-        top: $large-band-size - $xs-band-size;
-    }
 }

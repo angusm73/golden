@@ -10,9 +10,6 @@ var Angus = function () {
 
         this.initValidation();
         this.initScrollEvents();
-
-        this.stars_in_motion = [];
-        this.initRedStars();
     }
 
     _createClass(Angus, [{
@@ -79,7 +76,7 @@ var Angus = function () {
             /* On scroll */
             window.addEventListener('scroll', function (e) {
                 /* Sticky Nav */
-                if (window.scrollY) {
+                if (window.scrollY > 0) {
                     main_nav.classList.add('sticky');
                 } else {
                     main_nav.classList.remove('sticky');
@@ -107,46 +104,6 @@ var Angus = function () {
                 spy_elements = calculate_offsets();
             });
             window.dispatchEvent(new Event('scroll'));
-        }
-    }, {
-        key: 'initRedStars',
-        value: function initRedStars() {
-            var _this = this;
-
-            var bgs = document.querySelectorAll('.red-stripe');
-            bgs.forEach(function (bg) {
-
-                var stars = [];
-
-                for (var i = 0; i < 40; i++) {
-                    var star = document.createElement('span');
-                    star.size = Math.floor(Math.random() * 6) + 4;
-                    star.className = 'star';
-                    star.style.top = i * 2.25 + Math.random() * 4 - 2 + 'vw';
-                    star.style.width = star.size + 'px';
-                    star.style.height = star.size + 'px';
-                    stars.push(star);
-                    bg.appendChild(star);
-                }
-
-                setInterval(function () {
-                    var available_stars = stars.filter(function (star) {
-                        return !star.classList.contains('shooting');
-                    });
-                    var star = available_stars[Math.floor(Math.random() * available_stars.length)];
-                    if (!star) return;
-                    var speed = star.size / 8;
-                    _this.shootStar(star, speed);
-                }, 50);
-            });
-        }
-    }, {
-        key: 'shootStar',
-        value: function shootStar(star, speed) {
-            star.classList.add('shooting');
-            setTimeout(function () {
-                star.classList.remove('shooting');
-            }, 2000);
         }
     }]);
 

@@ -3,9 +3,6 @@ class Angus {
     constructor() {
         this.initValidation()
         this.initScrollEvents()
-
-        this.stars_in_motion = []
-        this.initRedStars()
     }
 
     initValidation() {
@@ -65,7 +62,7 @@ class Angus {
         /* On scroll */
         window.addEventListener('scroll', e => {
             /* Sticky Nav */
-            if (window.scrollY) {
+            if (window.scrollY > 0) {
                 main_nav.classList.add('sticky')
             } else {
                 main_nav.classList.remove('sticky')
@@ -91,40 +88,6 @@ class Angus {
             spy_elements = calculate_offsets()
         })
         window.dispatchEvent(new Event('scroll'))
-    }
-
-    initRedStars() {
-        const bgs = document.querySelectorAll('.red-stripe')
-        bgs.forEach(bg => {
-
-            let stars = []
-
-            for (let i = 0; i < 40; i++) {
-                const star = document.createElement('span')
-                star.size = Math.floor(Math.random() * 6) + 4
-                star.className = 'star'
-                star.style.top = (i * 2.25) + (Math.random() * 4) - 2 + 'vw'
-                star.style.width = star.size + 'px'
-                star.style.height = star.size + 'px'
-                stars.push(star)
-                bg.appendChild(star)
-            }
-
-            setInterval(() => {
-                const available_stars = stars.filter(star => !star.classList.contains('shooting'))
-                const star = available_stars[Math.floor(Math.random() * available_stars.length)]
-                if (!star) return
-                const speed = star.size / 8
-                this.shootStar(star, speed)
-            }, 50)
-        })
-    }
-
-    shootStar(star, speed) {
-        star.classList.add('shooting')
-        setTimeout(() => {
-            star.classList.remove('shooting')
-        }, 2000)
     }
 }
 
