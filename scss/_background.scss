@@ -15,13 +15,11 @@
 .footer-bg {
     position: absolute;
     box-shadow: 0 0 20px rgba(0, 0, 0, .5);
-}
-.footer-bg {
     top: 100%;
     left: 0;
     width: 400vh;
     height: $large-band-size;
-    background: $green;
+    background: $blue;
     transform: rotate(-$slope-angle);
     transform-origin: top left;
 }

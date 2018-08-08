@@ -62,14 +62,12 @@ table {
 
 .footer-bg {
   position: absolute;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); }
-
-.footer-bg {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   top: 100%;
   left: 0;
   width: 400vh;
   height: 68.412vw;
-  background: #408210;
+  background: #235789;
   transform: rotate(-34.3769deg);
   transform-origin: top left; }
 
@@ -468,9 +466,12 @@ body {
     background: #408210;
     -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); }
+    .main-nav.sticky a {
+      background: none; }
   .main-nav a {
     font-size: 1.2em;
     color: #FFF;
+    background: #0a1128;
     margin-right: -10px;
     margin-bottom: 2px;
     padding: 5px;
@@ -549,6 +550,8 @@ footer.footer {
 
 .hero {
   color: #FFF; }
+  .hero h1, .hero h2, .hero p span {
+    background: #0a1128; }
   .hero p {
     max-width: 540px;
     margin-bottom: 40px; }
@@ -591,7 +594,8 @@ footer.footer {
   .hero .btn {
     margin-bottom: 45px;
     margin-right: 20px;
-    font-size: var(--big-font); }
+    font-size: var(--big-font);
+    background-color: #0a1128; }
 
 .story {
   text-align: right; }

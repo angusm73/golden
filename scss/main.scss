@@ -108,10 +108,14 @@ body {
         margin: 0!important;
         background: $green;
         box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+        a {
+            background: none;
+        }
     }
     a {
         font-size: 1.2em;
         color: #FFF;
+        background: $dark-blue;
         margin-right: -10px;
         margin-bottom: 2px;
         padding: 5px;
@@ -183,6 +187,9 @@ footer.footer {
 
 .hero {
     color: #FFF;
+    h1, h2, p span {
+        background: $dark-blue;
+    }
     p {
         max-width: 540px;
         margin-bottom: 40px;
@@ -229,6 +236,7 @@ footer.footer {
         margin-bottom: 45px;
         margin-right: 20px;
         font-size: var(--big-font);
+        background-color: $dark-blue;
     }
 }
 .story {
