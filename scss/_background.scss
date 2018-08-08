@@ -2,7 +2,6 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;
 }
 .bg-wrapper.footer {
     position: relative;
@@ -11,6 +10,7 @@
     height: 80vw;
     margin-top: -25vw;
     margin-bottom: -25vw;
+    z-index: 1;
 }
 .footer-bg {
     position: absolute;
@@ -29,6 +29,7 @@
     color: #FFF;
     margin: -400px 0;
     padding: 400px 0;
+    z-index: 1;
     &::before {
         position: absolute;
         content: '';
@@ -47,6 +48,7 @@
     color: #FFF;
     margin: -400px 0;
     padding: 400px 0;
+    z-index: 1;
     &::before {
         position: absolute;
         content: '';
