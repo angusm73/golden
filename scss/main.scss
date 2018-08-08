@@ -140,7 +140,7 @@ footer.footer {
     margin: 0 auto;
     max-width: $site-width;
     padding: 5%;
-    color: darken($green, 50%);
+    color: #FFF;
     font-weight: 700;
     text-align: right;
     z-index: 9;
@@ -306,7 +306,6 @@ footer.footer {
 }
 @media (max-width: 850px) {
     .skills, .portfolio {
-        padding: 0;
         text-align: center;
     }
     footer.footer .local-info {

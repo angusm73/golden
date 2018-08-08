@@ -499,7 +499,7 @@ footer.footer {
   margin: 0 auto;
   max-width: 1200px;
   padding: 5%;
-  color: black;
+  color: #FFF;
   font-weight: 700;
   text-align: right;
   z-index: 9; }
@@ -667,7 +667,6 @@ footer.footer {
 
 @media (max-width: 850px) {
   .skills, .portfolio {
-    padding: 0;
     text-align: center; }
   footer.footer .local-info {
     font-size: 1.6em; } }
