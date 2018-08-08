@@ -19,6 +19,42 @@
     transform: rotate(-$slope-angle);
     transform-origin: top left;
 }
+.blue-row {
+    position: relative;
+    overflow: hidden;
+    color: #FFF;
+    margin: -400px 0;
+    padding: 400px 0;
+    &::before {
+        position: absolute;
+        content: '';
+        top: 400px;
+        left: 50%;
+        margin-left: -360px;
+        width: 1440px;
+        height: 100vh;
+        background: $blue;
+        transform: rotate(-$slope-angle);
+    }
+}
+.purple-row {
+    position: relative;
+    overflow: hidden;
+    color: #FFF;
+    margin: -400px 0;
+    padding: 400px 0;
+    &::before {
+        position: absolute;
+        content: '';
+        top: 400px;
+        right: 50%;
+        margin-right: -360px;
+        width: 1440px;
+        height: 100vh;
+        background: $purple;
+        transform: rotate($slope-angle);
+    }
+}
 
 @keyframes shootingStarRight {
     from { transform: translateX(0); }

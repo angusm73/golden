@@ -36,7 +36,7 @@ class Angus {
                         name: element.textContent,
                         link: element,
                         element: target,
-                        offset_top: target.offsetTop - window.innerHeight
+                        offset_top: target.getBoundingClientRect().top + window.scrollY - window.innerHeight
                     })
                 }
             }
@@ -52,7 +52,7 @@ class Angus {
                 element.addEventListener('click', e => {
                     e.preventDefault()
                     window.scrollTo({
-                        top: target.offsetTop - ((window.innerHeight - target.clientHeight) / 2),
+                        top: target.getBoundingClientRect().top + window.scrollY - ((window.innerHeight - target.clientHeight) / 2),
                         behavior: 'smooth'
                     })
                 })
