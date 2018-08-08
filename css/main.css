@@ -46,6 +46,12 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+.p5Canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; }
+
 .bg-wrapper.footer {
   position: relative;
   overflow: hidden;
