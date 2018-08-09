@@ -12,7 +12,7 @@ const autoprefixerOptions = {
 // Static server
 gulp.task('serve', () => {
     browserSync.init({
-        server: './'
+        proxy: "127.0.0.1:8080"
     })
     gulp.watch('js/*.js', ['js'])
     gulp.watch('scss/*.scss', ['sass'])

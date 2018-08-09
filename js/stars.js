@@ -1,4 +1,4 @@
-let max_stars = window.innerWidth * 0.5
+let max_stars = Math.min(960, window.innerWidth * 0.5)
 let stars = []
 let canvas_width = document.body.clientWidth
 let canvas_height = document.body.clientHeight
@@ -49,14 +49,14 @@ function windowResized() {
     canvas_width = document.body.clientWidth
     canvas_height = document.body.clientHeight
     resizeCanvas(canvas_width, canvas_height)
-    if (window.innerWidth * 0.5 > max_stars) {
+    if (Math.min(960, window.innerWidth * 0.5) > max_stars) {
         for (let i = 0; i < max_stars; i++) {
             if (!stars[i].length) {
                 stars.push(new Star)
             }
         }
     }
-    max_stars = window.innerWidth * 0.5
+    max_stars = Math.min(960, window.innerWidth * 0.5)
     stars = stars.splice(0, max_stars)
 }
 

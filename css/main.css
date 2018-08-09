@@ -46,6 +46,48 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+.sw p a, .hero a {
+  display: inline-block;
+  color: #FFF;
+  text-decoration: none;
+  font-weight: 700; }
+  .sw p a:hover, .hero a:hover {
+    text-decoration: underline; }
+
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: .6em 1.5em;
+  overflow: hidden;
+  background: none;
+  border: 2px solid #FFF;
+  color: #FFF;
+  font-size: var(--big-font);
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 1.5em;
+  transition: box-shadow .1s ease-out, color .25s ease-in-out;
+  outline: none;
+  vertical-align: middle;
+  cursor: pointer; }
+  .btn:hover, .btn:focus {
+    color: #0a1128; }
+    .btn:hover::before, .btn:focus::before {
+      left: 0; }
+  .btn:active {
+    box-shadow: inset 2px 2px 20px rgba(0, 0, 0, 0.7); }
+  .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -600px;
+    width: 600px;
+    height: 100px;
+    background: #FFF;
+    clip-path: polygon(0 0, 600px 0, 453.8px 100px, 0 100px);
+    transition: .5s ease-out;
+    z-index: -1; }
+
 .p5Canvas {
   position: absolute;
   top: 0;
@@ -363,6 +405,47 @@ body {
   background: #0a1128;
   font-family: 'Raleway', sans-serif; }
 
+.sw {
+  position: relative;
+  margin: 0 auto;
+  padding: 0 5%;
+  max-width: 1200px;
+  z-index: 2;
+  color: #FFF; }
+  .sw h1, .sw h2, .sw h3, .sw p > span {
+    background: #0a1128; }
+  .sw p {
+    margin: 1em 0; }
+    .sw p + p {
+      margin-top: 0; }
+  .sw > p {
+    max-width: 73.5%; }
+  .sw .cols {
+    margin: 48px 0; }
+
+.cols {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+  .cols > * {
+    -ms-flex-preferred-size: 23.5%;
+    flex-basis: 23.5%; }
+
+.flex-col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start; }
+
 .input-group {
   position: relative;
   margin-bottom: 30px; }
@@ -405,42 +488,6 @@ body {
   color: #FFF;
   border-radius: 1.5em; }
 
-.btn {
-  position: relative;
-  padding: .6em 1.5em;
-  overflow: hidden;
-  background: none;
-  border: 2px solid #FFF;
-  color: #FFF;
-  font-weight: 700;
-  border-radius: 1.5em;
-  -webkit-transition: color .5s ease-in-out, -webkit-box-shadow .1s ease-out;
-  transition: color .5s ease-in-out, -webkit-box-shadow .1s ease-out;
-  transition: box-shadow .1s ease-out, color .5s ease-in-out;
-  transition: box-shadow .1s ease-out, color .5s ease-in-out, -webkit-box-shadow .1s ease-out;
-  outline: none;
-  cursor: pointer; }
-  .btn:hover, .btn:focus {
-    color: #235789; }
-    .btn:hover::before, .btn:focus::before {
-      left: 0; }
-  .btn:active {
-    -webkit-box-shadow: inset 2px 2px 20px rgba(0, 0, 0, 0.7);
-    box-shadow: inset 2px 2px 20px rgba(0, 0, 0, 0.7); }
-  .btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -600px;
-    width: 600px;
-    height: 100px;
-    background: #FFF;
-    -webkit-clip-path: polygon(0 0, 600px 0, 453.8px 100px, 0 100px);
-    clip-path: polygon(0 0, 600px 0, 453.8px 100px, 0 100px);
-    -webkit-transition: .5s ease-in;
-    transition: .5s ease-in;
-    z-index: -1; }
-
 .main-nav {
   position: fixed;
   top: 5vw;
@@ -472,6 +519,7 @@ body {
       background: none; }
   .main-nav a {
     font-size: 1.2em;
+    font-weight: 700;
     color: #FFF;
     background: #0a1128;
     margin-right: -10px;
@@ -558,16 +606,10 @@ footer.footer {
     max-width: 540px;
     margin-bottom: 40px; }
   .hero a {
-    position: relative;
-    display: inline-block;
-    color: #FFF;
-    text-decoration: none;
-    font-weight: 700; }
-    .hero a:hover {
-      text-decoration: underline; }
-      .hero a:hover .tooltip {
-        margin-top: 10px;
-        opacity: 1; }
+    position: relative; }
+    .hero a:hover .tooltip {
+      margin-top: 10px;
+      opacity: 1; }
     .hero a .tooltip {
       position: absolute;
       top: 100%;
@@ -594,10 +636,9 @@ footer.footer {
       -webkit-transform: scale(0.9);
       transform: scale(0.9); }
   .hero .btn {
-    margin-bottom: 45px;
-    margin-right: 20px;
-    font-size: var(--big-font);
-    background-color: #0a1128; }
+    margin-bottom: 45px; }
+    .hero .btn:not(:last-of-type) {
+      margin-right: 20px; }
 
 .story {
   text-align: right; }
