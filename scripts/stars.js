@@ -4,10 +4,10 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var max_stars = Math.min(960, window.innerWidth * 0.5);
 var stars = [];
 var canvas_width = document.body.clientWidth;
 var canvas_height = document.body.clientHeight;
+var max_stars = Math.min(960, window.innerWidth * canvas_width / 4000);
 
 function setup() {
     createCanvas(canvas_width, canvas_height);
@@ -55,14 +55,14 @@ function windowResized() {
     canvas_width = document.body.clientWidth;
     canvas_height = document.body.clientHeight;
     resizeCanvas(canvas_width, canvas_height);
-    if (Math.min(960, window.innerWidth * 0.5) > max_stars) {
+    if (Math.min(960, window.innerWidth * canvas_width / 4000) > max_stars) {
         for (var i = 0; i < max_stars; i++) {
             if (!stars[i].length) {
                 stars.push(new Star());
             }
         }
     }
-    max_stars = Math.min(960, window.innerWidth * 0.5);
+    max_stars = Math.min(960, window.innerWidth * canvas_width / 4000);
     stars = stars.splice(0, max_stars);
 }
 

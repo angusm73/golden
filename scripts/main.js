@@ -16,6 +16,7 @@ var Angus = function () {
         key: 'initValidation',
         value: function initValidation() {
             var form = document.getElementById('contact-form');
+            if (!form) return;
             var text_inputs = form.querySelectorAll('input[type=text], input[type=email], textarea');
             var toggle_label = function toggle_label(e) {
                 if (e.target.value.length) {
@@ -42,12 +43,14 @@ var Angus = function () {
                     for (var i = 0; i < nav_links.length; i++) {
                         var element = nav_links[i];
                         var target = document.querySelector(element.getAttribute('data-spy'));
-                        elements.push({
-                            name: element.textContent,
-                            link: element,
-                            element: target,
-                            offset_top: target.getBoundingClientRect().top + window.scrollY - window.innerHeight
-                        });
+                        if (target) {
+                            elements.push({
+                                name: element.textContent,
+                                link: element,
+                                element: target,
+                                offset_top: target.getBoundingClientRect().top + window.scrollY - window.innerHeight
+                            });
+                        }
                     }
                 }
                 return elements;

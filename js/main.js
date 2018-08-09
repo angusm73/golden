@@ -7,6 +7,7 @@ class Angus {
 
     initValidation() {
         const form = document.getElementById('contact-form')
+        if (!form) return
         const text_inputs = form.querySelectorAll('input[type=text], input[type=email], textarea')
         const toggle_label = e => {
             if (e.target.value.length) {
@@ -32,12 +33,14 @@ class Angus {
                 for (let i = 0; i < nav_links.length; i++) {
                     const element = nav_links[i]
                     const target = document.querySelector(element.getAttribute('data-spy'))
-                    elements.push({
-                        name: element.textContent,
-                        link: element,
-                        element: target,
-                        offset_top: target.getBoundingClientRect().top + window.scrollY - window.innerHeight
-                    })
+                    if (target) {
+                        elements.push({
+                            name: element.textContent,
+                            link: element,
+                            element: target,
+                            offset_top: target.getBoundingClientRect().top + window.scrollY - window.innerHeight
+                        })
+                    }
                 }
             }
             return elements
