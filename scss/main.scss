@@ -28,8 +28,10 @@ body {
             @extend %link;
         }
     }
-    > p {
-        max-width: 73.5%;
+    @media (min-width: 901px) {
+        > p {
+            max-width: 73.5%;
+        }
     }
     .cols {
         margin: 48px 0;
@@ -38,8 +40,14 @@ body {
 .cols {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     > * {
-        flex-basis: 23.5%;
+        @media (min-width: 901px) {
+            flex-basis: 23.5%;
+        }
+        @media (min-width: 501px) and (max-width: 900px) {
+            flex-basis: 49%;
+        }
     }
 }
 .flex-col {
