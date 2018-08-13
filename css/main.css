@@ -147,11 +147,25 @@ table {
   .blue-row + .sw, .purple-row + .sw, .content-row + .sw {
     margin-top: 400px; }
 
+@media (max-width: 1200px) {
+  .blue-row {
+    margin: -200px 0;
+    padding: 200px 0; }
+    .blue-row::before {
+      top: 0; } }
+
 .blue-row::before {
   left: 50%;
   margin-left: -360px;
   background: #235789;
   transform: rotate(-34.3769deg); }
+
+@media (max-width: 1200px) {
+  .purple-row {
+    margin: -200px 0;
+    padding: 200px 0; }
+    .purple-row::before {
+      top: 0; } }
 
 .purple-row::before {
   right: 50%;
