@@ -96,10 +96,11 @@ class Star {
         noStroke()
         if (this.tracer_length) {
             image(this.img_glow, this.x - this.size * 5, this.y - this.size * 5, this.size * 10, this.size * 10)
-            fill(186, 100, 11)
-            ellipse(this.x - this.velocity.x * this.tracer_length, this.y - this.velocity.y * this.tracer_length, this.size, this.size)
-            fill(200, 29, 37)
-            ellipse(this.x - this.velocity.x * this.tracer_length / 2, this.y - this.velocity.y * this.tracer_length / 2, this.size, this.size)
+            strokeWeight(dpr)
+            stroke(200, 29, 37)
+            line(this.x, this.y, this.x - this.velocity.x * this.tracer_length / 2, this.y - this.velocity.y * this.tracer_length / 2)
+            stroke(186, 100, 11)
+            line(this.x - this.velocity.x * this.tracer_length / 2, this.y - this.velocity.y * this.tracer_length / 2, this.x - this.velocity.x * this.tracer_length, this.y - this.velocity.y * this.tracer_length)
         }
         image(this.img_star, this.x - this.size, this.y - this.size, this.size * 2, this.size * 2)
     }
