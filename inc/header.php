@@ -1,3 +1,4 @@
+<? date_default_timezone_set('Australia/Sydney'); ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
