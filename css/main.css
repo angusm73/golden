@@ -1,9 +1,9 @@
-.sw, .hero {
+.sw, .feature-box, .hero {
   margin: 0 auto;
   padding: 0 5%;
   max-width: 1200px; }
 
-.flex-col, .hero {
+.flex-col, .feature-box, .hero {
   display: flex;
   flex-direction: column;
   align-items: flex-start; }
@@ -122,41 +122,34 @@ table {
   transform: rotate(-34.3769deg);
   transform-origin: top left; }
 
-.blue-row {
+.blue-row, .purple-row {
   position: relative;
   overflow: hidden;
   color: #FFF;
   margin: -400px 0;
   padding: 400px 0;
   z-index: 1; }
-  .blue-row::before {
+  .blue-row::before, .purple-row::before {
     position: absolute;
     content: '';
     top: 400px;
-    left: 50%;
-    margin-left: -360px;
     width: 1440px;
-    height: 100vh;
-    background: #235789;
-    transform: rotate(-34.3769deg); }
+    height: 100vh; }
+    @media (max-width: 850px) {
+      .blue-row::before, .purple-row::before {
+        top: 200px; } }
 
-.purple-row {
-  position: relative;
-  overflow: hidden;
-  color: #FFF;
-  margin: -400px 0;
-  padding: 400px 0;
-  z-index: 1; }
-  .purple-row::before {
-    position: absolute;
-    content: '';
-    top: 400px;
-    right: 50%;
-    margin-right: -360px;
-    width: 1440px;
-    height: 100vh;
-    background: #140d4f;
-    transform: rotate(34.3769deg); }
+.blue-row::before {
+  left: 50%;
+  margin-left: -360px;
+  background: #235789;
+  transform: rotate(-34.3769deg); }
+
+.purple-row::before {
+  right: 50%;
+  margin-right: -360px;
+  background: #140d4f;
+  transform: rotate(34.3769deg); }
 
 @keyframes shootingStarRight {
   from {
@@ -186,6 +179,17 @@ h3 {
 p {
   font-size: 14px;
   line-height: 1.5em; }
+
+.text-left {
+  text-align: left; }
+  .text-left .flex-col {
+    align-items: inherit; }
+
+.text-right {
+  text-align: right;
+  align-items: flex-end; }
+  .text-right .flex-col {
+    align-items: inherit; }
 
 :root {
   --big-font: 16px; }
@@ -413,13 +417,13 @@ body {
   position: relative;
   background: #0a1128;
   font-family: 'Raleway', sans-serif; }
+  body > .sw h1, body > .sw h2, body > .sw h3, body > .sw p > span {
+    background: #0a1128; }
 
 .sw {
   position: relative;
   z-index: 2;
   color: #FFF; }
-  .sw h1, .sw h2, .sw h3, .sw p > span {
-    background: #0a1128; }
   .sw p {
     margin: 1em 0; }
     .sw p + p {
@@ -508,6 +512,15 @@ body {
 .mr-5, .mx-5 {
   margin-right: 64px; }
 
+.feature-box {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  min-height: 100vh;
+  max-height: 1200px;
+  z-index: 10; }
+
 .input-group {
   position: relative;
   margin-bottom: 30px; }
@@ -569,7 +582,9 @@ body {
   z-index: 100;
   -webkit-transition: .25s ease-out;
   transition: .25s ease-out;
-  background: transparent; }
+  background: transparent;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
   .main-nav.sticky {
     top: 0;
     right: 0;

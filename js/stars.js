@@ -2,6 +2,7 @@ let stars = []
 let canvas_width = document.body.clientWidth
 let canvas_height = document.body.clientHeight
 let max_stars = Math.min(canvas_height / 10, window.innerWidth * .5)
+const dpr = window.devicePixelRatio || 1
 
 function setup() {
     createCanvas(canvas_width, canvas_height)
@@ -13,7 +14,7 @@ function setup() {
 
     // Create star shape
     Star.prototype.img_star = (() => {
-        let star = createGraphics(20, 20)
+        let star = createGraphics(20 * dpr, 20 * dpr)
         star.background('rgba(0,0,0,0)')
         star.stroke(255)
         star.translate(10, 10)
@@ -33,7 +34,7 @@ function setup() {
 
     // Create star glow
     Star.prototype.img_glow = (() => {
-        let glow = createGraphics(100, 100)
+        let glow = createGraphics(100 * dpr, 100 * dpr)
         glow.background('rgba(0,0,0,0)')
         glow.stroke(255)
         glow.ellipse(50, 50, 25, 25)
@@ -76,9 +77,7 @@ class Star {
     }
     move() {
         const distance_to_cursor = dist(this.x, this.y, mouseX, mouseY)
-        const multiplier = !mouseIsPressed
-            ? distance_to_cursor < 160 ? (180 - distance_to_cursor) * 0.04 : 1
-            : 1
+        const multiplier = distance_to_cursor < 160 ? (180 - distance_to_cursor) * 0.04 : 1
         this.tracer_length = distance_to_cursor < 180 ? (180 - distance_to_cursor) * 0.2 : 0
         this.x += this.velocity.x * multiplier
         this.y += this.velocity.y * multiplier

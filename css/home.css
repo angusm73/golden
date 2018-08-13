@@ -1,23 +1,4 @@
 @charset "UTF-8";
-.story, .contact, .skills, .portfolio {
-  margin: 0 auto;
-  padding: 0 5%;
-  max-width: 1200px; }
-
-.story, .contact, .skills, .portfolio {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; }
-
-.story, .contact, .skills, .portfolio {
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  min-height: 100vh;
-  max-height: 1200px;
-  z-index: 10; }
-
 .story, .skills {
   -webkit-box-align: end;
   -ms-flex-align: end;

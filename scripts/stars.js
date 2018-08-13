@@ -8,6 +8,7 @@ var stars = [];
 var canvas_width = document.body.clientWidth;
 var canvas_height = document.body.clientHeight;
 var max_stars = Math.min(canvas_height / 10, window.innerWidth * .5);
+var dpr = window.devicePixelRatio || 1;
 
 function setup() {
     createCanvas(canvas_width, canvas_height);
@@ -19,7 +20,7 @@ function setup() {
 
     // Create star shape
     Star.prototype.img_star = function () {
-        var star = createGraphics(20, 20);
+        var star = createGraphics(20 * dpr, 20 * dpr);
         star.background('rgba(0,0,0,0)');
         star.stroke(255);
         star.translate(10, 10);
@@ -39,7 +40,7 @@ function setup() {
 
     // Create star glow
     Star.prototype.img_glow = function () {
-        var glow = createGraphics(100, 100);
+        var glow = createGraphics(100 * dpr, 100 * dpr);
         glow.background('rgba(0,0,0,0)');
         glow.stroke(255);
         glow.ellipse(50, 50, 25, 25);
@@ -91,7 +92,7 @@ var Star = function () {
         key: 'move',
         value: function move() {
             var distance_to_cursor = dist(this.x, this.y, mouseX, mouseY);
-            var multiplier = !mouseIsPressed ? distance_to_cursor < 160 ? (180 - distance_to_cursor) * 0.04 : 1 : 1;
+            var multiplier = distance_to_cursor < 160 ? (180 - distance_to_cursor) * 0.04 : 1;
             this.tracer_length = distance_to_cursor < 180 ? (180 - distance_to_cursor) * 0.2 : 0;
             this.x += this.velocity.x * multiplier;
             this.y += this.velocity.y * multiplier;

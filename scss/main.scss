@@ -9,6 +9,11 @@ body {
     position: relative;
     background: $dark-blue;
     font-family: 'Raleway', sans-serif;
+    > .sw {
+        h1, h2, h3, p > span {
+            background: $dark-blue;
+        }
+    }
 }
 
 .sw {
@@ -16,9 +21,6 @@ body {
     position: relative;
     z-index: 2;
     color: #FFF;
-    h1, h2, h3, p > span {
-        background: $dark-blue;
-    }
     p {
         margin: 1em 0;
         + p {
@@ -113,6 +115,14 @@ body {
 .mr-5, .mx-5 {
     margin-right: 64px;
 }
+.feature-box {
+    @extend %flex-col, %sw;
+    justify-content: center;
+    position: relative;
+    min-height: 100vh;
+    max-height: 1200px;
+    z-index: 10;
+}
 
 .input-group {
     position: relative;
@@ -177,6 +187,7 @@ body {
     z-index: 100;
     transition: .25s ease-out;
     background: transparent;
+    box-sizing: border-box;
     &.sticky {
         top: 0;
         right: 0;

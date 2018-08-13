@@ -17,6 +17,7 @@ gulp.task('serve', () => {
     gulp.watch('js/*.js', ['js'])
     gulp.watch('scss/*.scss', ['sass'])
     gulp.watch('*.html').on('change', browserSync.reload)
+    gulp.watch('*.php').on('change', browserSync.reload)
 })
 
 // Sass
