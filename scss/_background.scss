@@ -73,24 +73,30 @@
 }
 .content-row {
     @extend %colored-row;
-    margin: -900px 0;
-    padding: 900px 0 1000px;
+    margin: -800px 0;
+    padding: 800px 0;
     &::before {
-        top: 0;
+        top: 800px;
         right: 50%;
         height: calc(100% - 1000px);
         max-width: $site-width + 248px;
         margin-right: -$site-width/2 - 128px;
         background: $purple;
-        transform: skewY($slope-angle);
+        transform: skewY(-$slope-angle);
         transform-origin: top left;
     }
-    @media (max-width: 1200px) {
-        margin: 0;
-        padding: 64px 0;
+    @media (min-width: 501px) and (max-width: 1200px) {
+        margin: -600px 0;
+        padding: 600px 0;
         &::before {
-            transform: none;
-            height: 100%;
+            height: calc(100% - 800px);
+        }
+    }
+    @media (max-width: 500px) {
+        margin: -400px 0;
+        padding: 400px 0;
+        &::before {
+            height: calc(100% - 600px);
         }
     }
 }

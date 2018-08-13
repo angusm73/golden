@@ -160,24 +160,29 @@ table {
   transform: rotate(34.3769deg); }
 
 .content-row {
-  margin: -900px 0;
-  padding: 900px 0 1000px; }
+  margin: -800px 0;
+  padding: 800px 0; }
   .content-row::before {
-    top: 0;
+    top: 800px;
     right: 50%;
     height: calc(100% - 1000px);
     max-width: 1448px;
     margin-right: -728px;
     background: #140d4f;
-    transform: skewY(34.3769deg);
+    transform: skewY(-34.3769deg);
     transform-origin: top left; }
-  @media (max-width: 1200px) {
+  @media (min-width: 501px) and (max-width: 1200px) {
     .content-row {
-      margin: 0;
-      padding: 64px 0; }
+      margin: -600px 0;
+      padding: 600px 0; }
       .content-row::before {
-        transform: none;
-        height: 100%; } }
+        height: calc(100% - 800px); } }
+  @media (max-width: 500px) {
+    .content-row {
+      margin: -400px 0;
+      padding: 400px 0; }
+      .content-row::before {
+        height: calc(100% - 600px); } }
 
 @keyframes shootingStarRight {
   from {
