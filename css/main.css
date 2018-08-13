@@ -98,7 +98,7 @@ table {
   border-spacing: 0; }
 
 .p5Canvas {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0; }
 
@@ -150,9 +150,9 @@ table {
 @media (max-width: 1200px) {
   .blue-row {
     margin: -200px 0;
-    padding: 200px 0; }
+    padding: 300px 0; }
     .blue-row::before {
-      top: 0; } }
+      top: 200px; } }
 
 .blue-row::before {
   left: 50%;
@@ -163,9 +163,9 @@ table {
 @media (max-width: 1200px) {
   .purple-row {
     margin: -200px 0;
-    padding: 200px 0; }
+    padding: 300px 0; }
     .purple-row::before {
-      top: 0; } }
+      top: 200px; } }
 
 .purple-row::before {
   right: 50%;

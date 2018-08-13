@@ -1,5 +1,5 @@
 .p5Canvas {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
 }
@@ -57,9 +57,9 @@
     @extend %colored-row;
     @media (max-width: 1200px) {
         margin: -200px 0;
-        padding: 200px 0;
+        padding: 300px 0;
         &::before {
-            top: 0;
+            top: 200px;
         }
     }
     &::before {
@@ -73,9 +73,9 @@
     @extend %colored-row;
     @media (max-width: 1200px) {
         margin: -200px 0;
-        padding: 200px 0;
+        padding: 300px 0;
         &::before {
-            top: 0;
+            top: 200px;
         }
     }
     &::before {

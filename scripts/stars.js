@@ -6,7 +6,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 var stars = [];
 var canvas_width = document.body.clientWidth;
-var canvas_height = document.body.clientHeight;
+var canvas_height = window.innerHeight;
 var max_stars = Math.min(canvas_height / 30, window.innerWidth * .28);
 var dpr = window.devicePixelRatio || 1;
 
@@ -54,7 +54,7 @@ function setup() {
 
 function windowResized() {
     canvas_width = document.body.clientWidth;
-    canvas_height = document.body.clientHeight;
+    canvas_height = window.innerHeight;
     resizeCanvas(canvas_width, canvas_height);
     if (Math.min(canvas_height / 30, window.innerWidth * .28) > max_stars) {
         for (var i = 0; i < max_stars; i++) {

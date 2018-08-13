@@ -1,6 +1,6 @@
 let stars = []
 let canvas_width = document.body.clientWidth
-let canvas_height = document.body.clientHeight
+let canvas_height = window.innerHeight
 let max_stars = Math.min(canvas_height / 30, window.innerWidth * .28)
 const dpr = window.devicePixelRatio || 1
 
@@ -48,7 +48,7 @@ function setup() {
 
 function windowResized() {
     canvas_width = document.body.clientWidth
-    canvas_height = document.body.clientHeight
+    canvas_height = window.innerHeight
     resizeCanvas(canvas_width, canvas_height)
     if (Math.min(canvas_height / 30, window.innerWidth * .28) > max_stars) {
         for (let i = 0; i < max_stars; i++) {
