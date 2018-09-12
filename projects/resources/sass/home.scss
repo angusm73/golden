@@ -1,0 +1,64 @@
+@import 'variables';
+@import 'style';
+
+.story, .skills {
+    align-items: flex-end;
+}
+.story {
+    text-align: right;
+    .timeline {
+        li {
+            position: relative;
+            margin: 0 auto;
+            &:not(:last-child) {
+                margin-bottom: 60px;
+                ::after {
+                    content: '';
+                    position: absolute;
+                    right: 5px;
+                    top: 100%;
+                    margin-top: 15px;
+                    height: 30px;
+                    width: 2px;
+                    background: rgba(#FFF, .3);
+                }
+            }
+            span {
+                font-size: var(--big-font);
+                line-height: 1.5em;
+                &:first-child {
+                    text-decoration: underline;
+                }
+                &:last-child::before {
+                    content: '·';
+                    margin-right: 4px;
+                }
+            }
+        }
+    }
+}
+.contact {
+    color: #FFF;
+    form {
+        width: 100%;
+    }
+    .input-group {
+        max-width: 420px;
+        textarea {
+            resize: none;
+        }
+    }
+    .btn {
+        margin-top: 30px;
+        font-size: var(--big-font);
+    }
+}
+.skills, .portfolio {
+    color: #FFF;
+}
+
+@media (max-width: 850px) {
+    .skills, .portfolio {
+        text-align: center;
+    }
+}

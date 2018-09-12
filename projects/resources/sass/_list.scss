@@ -1,0 +1,247 @@
+.list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 750px;
+    margin-top: 150px;
+    li {
+        position: relative;
+        outline: none;
+        a {
+            display: inline-block;
+            color: #FFF;
+            transition: .1s ease-out;
+            z-index: 2;
+        }
+        > span, > a {
+            position: relative;
+            display: flex;
+            height: 206px;
+            width: 300px;
+            padding: 2em;
+            font-size: var(--big-font);
+            line-height: 1.5em;
+            box-sizing: border-box;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            background: rgba(darken($dark-blue, 2%), .25);
+            clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+            transition: .2s ease-out;
+            z-index: 1;
+        }
+        &:hover, &:focus {
+            > span, > a {
+                transform: scale(1.1);
+                background: darken($dark-blue, 5%);
+                z-index: 50;
+            }
+            .expand {
+                display: flex;
+            }
+        }
+        .expand {
+            display: none;
+            position: absolute;
+            top: 100%;
+            width: 200%;
+            height: 200%;
+            margin-top: -103px;
+            padding: 70px 80px;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            background: darken($dark-blue, 3.5%);
+            clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+            box-sizing: border-box;
+            pointer-events: none;
+            z-index: 20;
+        }
+    }
+}
+.skills {
+    text-align: right;
+    .list {
+        margin-left: auto;
+        margin-right: -150px;
+        li .expand {
+            margin-left: -300px;
+            animation: slideInTopRight .5s forwards ease-out;
+        }
+    }
+}
+.portfolio {
+    .list {
+        justify-content: flex-end;
+        margin-left: -150px;
+        li .expand {
+            margin-right: -300px;
+            animation: slideInTopLeft .35s forwards ease-in-out;
+        }
+    }
+}
+
+@keyframes slideInTopLeft {
+    0% { clip-path: polygon(50% 0, 25% 25%, 50% 0, 25% 25%); }
+    25% { clip-path: polygon(50% 0, 75% 25%, 50% 50%, 25% 25%); }
+    75% { clip-path: polygon(50% 0, 75% 25%, 25% 75%, 0 50%); }
+    100% { clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); }
+}
+@keyframes slideInTopRight {
+    0% { clip-path: polygon(50% 0, 75% 25%, 50% 0, 75% 25%); }
+    25% { clip-path: polygon(50% 0, 75% 25%, 50% 50%, 25% 25%); }
+    75% { clip-path: polygon(50% 0, 100% 50%, 75% 75%, 25% 25%); }
+    100% { clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); }
+}
+
+@media (max-width: 1820px) {
+    .skills .list {
+        margin-right: 0;
+    }
+    .portfolio .list {
+        margin-left: 0;
+    }
+}
+@media (max-width: 1300px) {
+    .list {
+        justify-self: flex-end;
+    }
+}
+@media (min-width: 1301px) {
+    .skills .list li {
+        margin-top: -103px;
+        &:nth-child(4n+3) {
+            margin-left: 150px;
+        }
+        .expand {
+            margin-left: -300px;
+        }
+    }
+    .portfolio .list li {
+        margin-top: -103px;
+        &:nth-child(4n) {
+            margin-right: 150px;
+        }
+        .expand {
+            margin-right: -300px;
+        }
+    }
+}
+@media (min-width: 851px) and (max-width: 1300px) {
+    .list {
+        margin-top: 110px;
+        width: 720px;
+        li {
+            > span, > a {
+                width: 240px;
+                height: 164.2px;
+            }
+            .expand {
+                margin-top: -82.1px;
+            }
+        }
+    }
+    .skills .list li {
+        margin-top: -82.1px;
+        &:nth-child(4n-1) {
+            margin-left: 120px;
+        }
+        .expand {
+            margin-left: -240px;
+        }
+    }
+    .portfolio .list li {
+        margin-top: -82.1px;
+        &:nth-child(4n-1) {
+            margin-left: 120px;
+        }
+        &:nth-child(4n) {
+            margin-right: 120px;
+        }
+        .expand {
+            margin-right: -240px;
+        }
+    }
+}
+@media (min-width: 501px) and (max-width: 850px) {
+    .list {
+        margin-top: 0;
+        width: 240px;
+        li {
+            &:nth-child(3n-2) {
+                margin-top: -82.1px;
+            }
+            &:nth-child(3n-1) {
+                margin-top: -82.1px;
+                margin-left: -120px;
+            }
+            &:nth-child(3n) {
+                margin-top: -82.1px;
+                margin-right: -120px;
+            }
+            &:first-child {
+                margin-top: 0;
+            }
+            > span, > a {
+                width: 240px;
+                height: 164.2px;
+            }
+            .expand {
+                margin-top: -82.1px;
+            }
+        }
+    }
+    .skills .list li {
+        .expand {
+            margin-left: -240px;
+        }
+        &:nth-child(3n-2) .expand {
+            margin-top: 0;
+            margin-left: -120px;
+        }
+        &:nth-child(3n-1) .expand {
+            margin-left: 0;
+            margin-right: -120px;
+            animation: slideInTopLeft .35s forwards ease-in-out;
+        }
+    }
+    .portfolio .list li {
+        &:nth-child(3n-2) .expand {
+            margin-top: 0;
+            margin-left: -120px;
+        }
+        &:nth-child(3n) .expand {
+            margin-left: -240px;
+            animation: slideInTopRight .35s forwards ease-in-out;
+        }
+    }
+}
+@media (max-width: 850px) {
+    .list {
+        margin: 0 auto!important;
+    }
+}
+@media (max-width: 500px) {
+    .list {
+        width: 90%;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: initial;
+        li {
+            > span, > a {
+                height: auto;
+                width: 100%;
+                padding: 0;
+                clip-path: none;
+            }
+            .expand {
+                left: 0;
+                width: 100%;
+                margin-top: 0!important;
+                margin-left: 0!important;
+                clip-path: none;
+                animation: none!important;
+            }
+        }
+    }
+}

@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+.story,
+.skills {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.story {
+  text-align: right;
+}
+
+.story .timeline li {
+  position: relative;
+  margin: 0 auto;
+}
+
+.story .timeline li:not(:last-child) {
+  margin-bottom: 60px;
+}
+
+.story .timeline li:not(:last-child) ::after {
+  content: '';
+  position: absolute;
+  right: 5px;
+  top: 100%;
+  margin-top: 15px;
+  height: 30px;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.story .timeline li span {
+  font-size: var(--big-font);
+  line-height: 1.5em;
+}
+
+.story .timeline li span:first-child {
+  text-decoration: underline;
+}
+
+.story .timeline li span:last-child::before {
+  content: '\B7';
+  margin-right: 4px;
+}
+
+.contact {
+  color: #FFF;
+}
+
+.contact form {
+  width: 100%;
+}
+
+.contact .input-group {
+  max-width: 420px;
+}
+
+.contact .input-group textarea {
+  resize: none;
+}
+
+.contact .btn {
+  margin-top: 30px;
+  font-size: var(--big-font);
+}
+
+.skills,
+.portfolio {
+  color: #FFF;
+}
+
+@media (max-width: 850px) {
+  .skills,
+  .portfolio {
+    text-align: center;
+  }
+}
+
